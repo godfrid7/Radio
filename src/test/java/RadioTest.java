@@ -274,4 +274,64 @@ public class RadioTest {
         int expected = 10;
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void NextTest() {
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(19);
+
+        int actual = radio.getCurrentStation();
+        int expected = 19;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void validNewTest() {
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(18);
+
+        int actual = radio.getCurrentStation();
+        int expected = 18;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void zeroNewTest() {
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(0);
+
+        int actual = radio.getCurrentStation();
+        int expected = 0;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void zeroTest() {
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(1);
+
+        int actual = radio.getCurrentStation();
+        int expected = 1;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void MaxZeroTest() {
+        Radio radio = new Radio(100);
+
+        radio.setCurrentStation(1);
+
+        int actual = radio.getCurrentStation();
+        int expected = 1;
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
